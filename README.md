@@ -12,7 +12,6 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv init
 source .venv/bin/activate
 uv sync
-uv tool install verifiers
 uv pip install -e .
 ```
 
