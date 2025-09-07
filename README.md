@@ -23,6 +23,8 @@ uv pip install -e .
 # you can download from https://huggingface.co/datasets/ByteDance-Seed/cudaLLM-data/tree/main
 ```
 
+don't forget to export your oai api key.
+
 ### test setup
 ```bash
 uv run test_environment.py
