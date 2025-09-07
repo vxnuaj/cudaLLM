@@ -48,6 +48,7 @@ uv run test_environment.py
 
 ### run evaluation
 ```bash
+cd environments
 vf-eval cuda_kernel_generation -m gpt-4o -n 10
 ```
 
