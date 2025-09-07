@@ -31,7 +31,7 @@ uv run test_environment.py
 
 ### what's in here
 
-- **cuda_kernel_generation environment** - the main RL env that loads problems from parquet files
+- **cuda_llm environment** - the main RL env that loads problems from parquet files
 - **reward functions** - compilation, validation, format checking 
 - **test script** - debug rewards on specific outputs
 - **parser** - extracts code from model responses
@@ -48,7 +48,7 @@ uv run test_environment.py
 ### run evaluation
 ```bash
 cd environments
-vf-eval cuda_kernel_generation -m gpt-4o -n 10
+vf-eval cuda_llm -m gpt-4o -n 10
 ```
 
 common flags:
@@ -77,7 +77,7 @@ python test_rewards.py 'your code here'
 
 ## files
 
-- `environments/cuda_kernel_generation/` - main environment code
+- `environments/cuda_llm/` - main environment code
 - `test_rewards.py` - debug reward calculations  
 - `test_environment.py` - basic env testing
 - `environments/eval_data/rl_cuda_llm_0424.parquet` - real eval data
