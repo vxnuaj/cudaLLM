@@ -408,7 +408,9 @@ class CudaCodeParser(vf.Parser):
 
 
 def load_default_cuda_dataset():
-    dataset_path = "eval_data/rl_cuda_llm_0424.parquet"
+    # Use path relative to this module's directory
+    module_dir = Path(__file__).parent.parent
+    dataset_path = str(module_dir / "eval_data" / "rl_cuda_llm_0424.parquet")
     if os.path.exists(dataset_path):
         try:
             logger.info(f"Loading dataset from {dataset_path}")
@@ -456,7 +458,8 @@ def create_mock_dataset(mock:bool = False):
     from datasets import Dataset
     
     # Try to get one sample from the parquet file first
-    parquet_path = "eval_data/rl_cuda_llm_0424.parquet"
+    module_dir = Path(__file__).parent.parent
+    parquet_path = str(module_dir / "eval_data" / "rl_cuda_llm_0424.parquet")
     if os.path.exists(parquet_path):
         try:
             full_dataset = load_dataset("parquet", data_files=parquet_path, split='train')
@@ -521,7 +524,8 @@ def load_environment(
             logger.error(f"Failed to load dataset from {dataset_path}: {e}")
             dataset = load_default_cuda_dataset()
     else:
-        parquet_path = "eval_data/rl_cuda_llm_0424.parquet"
+        module_dir = Path(__file__).parent.parent
+        parquet_path = str(module_dir / "eval_data" / "rl_cuda_llm_0424.parquet")
         if os.path.exists(parquet_path):
             try:
                 dataset = load_dataset("parquet", data_files=parquet_path, split='train')
