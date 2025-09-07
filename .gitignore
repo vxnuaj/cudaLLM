@@ -6,3 +6,4 @@ wheels/
 *.egg-info
 .venv
 cud_lib/
+.DS_Store
